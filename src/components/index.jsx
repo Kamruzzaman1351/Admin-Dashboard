@@ -1,5 +1,7 @@
 export { default as Button } from "./shared/Button";
 export { default as SettingsIconButton } from "./shared/SettingsIconButton";
+export { default as LogoSection } from "./shared/LogoSection";
+export { default as MenuSection } from "./shared/MenuSection";
 export { default as Cart } from "./Cart";
 export { default as Chat } from "./Chat";
 export { default as Notification } from "./Notification";

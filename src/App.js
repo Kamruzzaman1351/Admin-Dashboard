@@ -1,10 +1,13 @@
 import "./App.css"
-import React, { useEffect } from "react"
+import React, { useEffect, useContext } from "react"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { SettingsIconButton, Sidebar, Footer, Navbar } from "./components"
 import { Dashboard, Calendar, ColorPicker, Customers, Editor, Employees, Kanban, Orders, Area, Bar, ColorMapping, Financial, Line, Pie, Pyramid, Stacked } from "./pages"
+import DashboardContext from "./contexts/DashboardContext"
+
+
 function App() {
-  const isActiveMenu = true;
+  const {isActiveMenu} = useContext(DashboardContext)
   return (
     <>
       <BrowserRouter>

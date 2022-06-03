@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from "react-router-dom"
 import { SiShopware } from "react-icons/si"
 import { MdOutlineCancel } from "react-icons/md"
 import { TooltipComponent } from "@syncfusion/ej2-react-popups"
+import DashboardContext from '../../contexts/DashboardContext'
 const LogoSection = () => {
+    const {setIsActiveMenu} = useContext(DashboardContext);
   return (
     <div className="flex justify-between items-center">
         <Link to="/" 
@@ -15,7 +17,7 @@ const LogoSection = () => {
         <TooltipComponent content="Menu" position="BottomCenter">
             <button
                 type="button"
-                onClick={() => {}}
+                onClick={() => {setIsActiveMenu(false)}}
                 style={{}}
                 className="text-xl rounded-full p-3 hover:bg-light-gray mt-4 block"
             >

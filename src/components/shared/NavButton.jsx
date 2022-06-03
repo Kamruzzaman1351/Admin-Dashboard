@@ -1,6 +1,6 @@
 import React from 'react'
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
-
+import PropTypes from "prop-types"
 
 
 const NavButton = ({ title, customFunc, icon, color, dotColor }) => {
@@ -21,4 +21,11 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => {
   )
 }
 
+NavButton.propTypes = {
+  title: PropTypes.string.isRequired, 
+  customFunc: PropTypes.func.isRequired, 
+  icon: PropTypes.any, 
+  color: PropTypes.string, 
+  dotColor: PropTypes.string,
+}
 export default NavButton

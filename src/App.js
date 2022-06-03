@@ -7,7 +7,20 @@ import DashboardContext from "./contexts/DashboardContext"
 
 
 function App() {
-  const {isActiveMenu} = useContext(DashboardContext)
+  const {isActiveMenu, setIsActiveMenu, screenSize, setScreenSize} = useContext(DashboardContext)
+  useEffect(() => {
+    const handleResize = () => setScreenSize(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize)
+  }, []);
+  useEffect(() => {
+    if(screenSize <= 900) {
+      setIsActiveMenu(false);
+    } else {
+      setIsActiveMenu(true);
+    }
+  }, [screenSize])
   return (
     <>
       <BrowserRouter>

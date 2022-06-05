@@ -2,6 +2,7 @@ import React from 'react'
 import { Header } from '../components';
 import { GridComponent, ColumnsDirective, ColumnDirective, Search, Sort, ContextMenu, Filter, Page, ExcelExport, PdfExport, Edit, Inject, Toolbar } from "@syncfusion/ej2-react-grids"
 import { customersData, customersGrid, contextMenuItems } from "../data/dummyData"
+import { Fields } from '@syncfusion/ej2-react-dropdowns';
 
 
 const Customers = () => {
@@ -22,6 +23,7 @@ const Customers = () => {
           toolbar={toolbarOptions}
           allowExcelExport
           allowPdfExport
+          searchSettings={ {fields:['CustomerName','CustomerEmail', 'ProjectName', 'Status', 'CustomerID']}}
         >
           <ColumnsDirective>
             {customersGrid.map((item, index) => (

@@ -14,7 +14,7 @@ export { default as BarChart } from "./charts/BarChart";
 export { default as FinancialChart } from "./charts/FinancialChart";
 export { default as AreaChart } from "./charts/AreaChart";
 export { default as SparkLine } from "./charts/SparkLine";
-export { default as Stacked } from "./charts/Stacked";
+export { default as StackedChart } from "./charts/StackedChart";
 export { default as Header } from "./layouts/Header";
 export { default as ChartsHeader } from "./layouts/ChartsHeader";
 export { default as Footer } from "./layouts/Footer";

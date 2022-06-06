@@ -4,7 +4,7 @@ import { stackedPrimaryYAxis, stackedCustomSeries, stackedPrimaryXAxis  } from '
 
 
 
-const Stacked = ({ width, height }) => {
+const StackedChart = ({ width, height }) => {
   const currentMode = "blue";
   return (
     <ChartComponent
@@ -26,4 +26,4 @@ const Stacked = ({ width, height }) => {
   )
 }
 
-export default Stacked
+export default StackedChart

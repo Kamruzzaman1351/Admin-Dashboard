@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import { Button, SparkLine, Stacked } from '../components'
+import { Button, SparkLine, StackedChart } from '../components'
 import { earningData, SparklineAreaData } from '../data/dummyData'
 import { GoPrimitiveDot } from "react-icons/go"
 import DashboardContext from '../contexts/DashboardContext'
@@ -106,7 +106,7 @@ const Dashboard = () => {
               </div>              
             </div>
             <div>
-              <Stacked width="320px" height="360px" />
+              <StackedChart width="320px" height="360px" />
             </div>
           </div>
         </div>          

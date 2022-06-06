@@ -10,7 +10,12 @@ const Notification = () => {
       <div className="flex justify-between items-center">
         <div className="flex gap-3">
           <p className="font-semibold text-lg dark:text-gray-200">Notifications</p>
-          <button type="button" className="text-white text-xs rounded p-1 px-2 bg-orange-theme "> 5 New</button>
+          <button type="button" 
+          className="text-white text-xs rounded p-1 px-2 bg-orange-theme "
+          style={{
+            backgroundColor: currentColor
+          }}
+          > 5 New</button>
         </div>
         <button 
           type="button"

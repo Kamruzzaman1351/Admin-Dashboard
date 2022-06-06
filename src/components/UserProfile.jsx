@@ -18,7 +18,7 @@ const UserProfile = () => {
             color: currentColor,
             borderRadius:"50%"
           }}
-          onClick={()=> {handleClickClose("chat")}}
+          onClick={()=> {handleClickClose("userProfile")}}
         >
           <MdOutlineCancel />
         </button>

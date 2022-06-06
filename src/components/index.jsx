@@ -11,6 +11,7 @@ export { default as UserProfile } from "./UserProfile";
 export { default as LineChart } from "./charts/LineChart";
 export { default as PieChart } from "./charts/PieChart";
 export { default as BarChart } from "./charts/BarChart";
+export { default as FinancialChart } from "./charts/FinancialChart";
 export { default as AreaChart } from "./charts/AreaChart";
 export { default as SparkLine } from "./charts/SparkLine";
 export { default as Stacked } from "./charts/Stacked";

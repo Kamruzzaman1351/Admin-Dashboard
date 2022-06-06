@@ -11,7 +11,7 @@ import avatar from "../assets/imgs/avatar.jpg";
 
 
 const Navbar = () => {
-  const {isActiveMenu, setIsActiveMenu, isClicked, handleClick } = useContext(DashboardContext);
+  const {isActiveMenu, setIsActiveMenu, isClicked, handleClick, currentColor } = useContext(DashboardContext);
   const handleActiveMenu = () => setIsActiveMenu(!isActiveMenu);
   
   return (
@@ -19,27 +19,27 @@ const Navbar = () => {
       <NavButton 
         title="Menu" 
         customFunc={handleActiveMenu} 
-        color="blue" 
+        color={currentColor} 
         icon={<AiOutlineMenu />}
       />
       <div className="flex">
         <NavButton 
           title="Cart" 
           customFunc={() => handleClick("cart")} 
-          color="blue" 
+          color={currentColor} 
           icon={<FiShoppingCart />}
         />
         <NavButton 
           title="Chat" 
           customFunc={() => handleClick("chat")} 
-          color="blue" 
+          color={currentColor} 
           icon={<BsChatLeft />}
           dotColor="#03C9D7" 
         />
         <NavButton 
           title="Notification" 
           customFunc={() => handleClick("notification")} 
-          color="blue" 
+          color={currentColor} 
           icon={<RiNotification3Line />}
           dotColor="rgb(254, 201, 15)" 
         />
@@ -49,17 +49,21 @@ const Navbar = () => {
             onClick={() => handleClick('userProfile')}
           >
             <img
-              className="rounded-full w-8 h-8"
+              className="rounded-full w-8 h-8 border-1"
+              style={{borderColor: currentColor}}
               src={avatar}
               alt="user-profile"
             />
             <p>
               <span className="text-gray-400 text-14">Hi,</span>{' '}
-              <span className="text-gray-400 font-bold ml-1 text-14">
+              <span style={{color: currentColor}} 
+                    className="text-gray-400 font-bold ml-1 text-14">
                 Kamruzzaman
               </span>
             </p>
-            <MdKeyboardArrowDown className="text-gray-400 text-14" />
+            <MdKeyboardArrowDown className="text-gray-400 text-14" 
+              style={{color: currentColor}}
+            />
           </div>
         </TooltipComponent>
         { isClicked.cart && <Cart />}

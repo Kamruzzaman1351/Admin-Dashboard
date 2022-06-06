@@ -5,20 +5,21 @@ import { MdOutlineCancel } from "react-icons/md"
 import { TooltipComponent } from "@syncfusion/ej2-react-popups"
 import DashboardContext from '../../contexts/DashboardContext'
 const LogoSection = () => {
-    const {setIsActiveMenu, handleCloseSidebar} = useContext(DashboardContext);
+    const {setIsActiveMenu, handleCloseSidebar, currentColor} = useContext(DashboardContext);
   return (
     <div className="flex justify-between items-center">
         <Link to="/" 
+            style={{color: currentColor}}
             onClick={handleCloseSidebar}
             className="items-center gap-3 ml-3 mt-4 flex text-2xl font-extrabold tracking-tight dark:text-white text-slate-900">
             <SiShopware className=""/>
-            <span>Dashboard</span>
+            <span >Dashboard</span>
         </Link>
         <TooltipComponent content="Menu" position="BottomCenter">
             <button
                 type="button"
                 onClick={() => {setIsActiveMenu(false)}}
-                style={{}}
+                style={{color: currentColor}}
                 className="text-xl rounded-full p-3 hover:bg-light-gray mt-4 block"
             >
                 <MdOutlineCancel />

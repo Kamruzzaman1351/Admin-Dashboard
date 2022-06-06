@@ -1,8 +1,10 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { Button, SparkLine, Stacked } from '../components'
 import { earningData, SparklineAreaData } from '../data/dummyData'
 import { GoPrimitiveDot } from "react-icons/go"
+import DashboardContext from '../contexts/DashboardContext'
 const Dashboard = () => {
+  const { currentColor } = useContext(DashboardContext)
   return (
     <div className="mt-12">
       <div className="flex flex-wrap lg:flex-nowrap justify-center ">
@@ -18,7 +20,7 @@ const Dashboard = () => {
           <div className="mt-6">
             <Button 
               color="white"
-              bgColor="blue"
+              bgColor={currentColor}
               text="Download"
               borderRadius="10px"
               size="md"  
@@ -50,9 +52,9 @@ const Dashboard = () => {
       </div>
       <div className="flex gap-10 flex-wrap justify-center">
         <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 rounded-2xl md:w-780">
-          <div className="flex justify-between">
+          <div className="flex justify-between pl-3">
             <p className="font-semibold text-xl">Revenue Updates</p>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 pr-3">
               <p className="flex items-center gap-2 text-gray-600 hover:drop-shadow-xl">
                 <span>
                   <GoPrimitiveDot />
@@ -84,19 +86,19 @@ const Dashboard = () => {
               </div>
               <div className="mt-5">              
                 <SparkLine 
-                  currentColor="blue"
+                  currentColor={currentColor}
                   id="line-sparkline"
                   type="Line"
                   height="80px"
                   width="250px"
                   data={SparklineAreaData}
-                  color="blue"  
+                  color={currentColor}  
                 />
               </div>
               <div className="mt-10">
                 <Button 
                   color="white"
-                  bgColor="blue"
+                  bgColor={currentColor}
                   text="Download Report"
                   borderRadius="10px"
                   size="md"  

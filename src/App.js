@@ -1,13 +1,14 @@
 import "./App.css"
 import React, { useEffect, useContext } from "react"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import { SettingsIconButton, Sidebar, Footer, Navbar } from "./components"
+import { SettingsIconButton, Sidebar, Footer, Navbar, ThemeSettings } from "./components"
 import { Dashboard, Calendar, ColorPicker, Customers, Editor, Employees, Kanban, Orders, Area, Bar, ColorMapping, Financial, Line, Pie, Pyramid, Stacked } from "./pages"
 import DashboardContext from "./contexts/DashboardContext"
 
 
 function App() {
-  const {isActiveMenu, setIsActiveMenu, screenSize, setScreenSize} = useContext(DashboardContext)
+  const {isActiveMenu, setIsActiveMenu, screenSize, setScreenSize, showSetting, setCurrentMode, 
+    setCurrentColor,} = useContext(DashboardContext)
   useEffect(() => {
     const handleResize = () => setScreenSize(window.innerWidth);
     window.addEventListener("resize", handleResize);
@@ -21,6 +22,11 @@ function App() {
       setIsActiveMenu(true);
     }
   }, [screenSize])
+  useEffect(() => {
+    setCurrentMode(localStorage.getItem("themeColor")) 
+    setCurrentColor(localStorage.getItem("currentColor"))
+    
+  },[])
   return (
     <>
       <BrowserRouter>
@@ -45,6 +51,7 @@ function App() {
               <Navbar />
             </div>            
             <div>
+              {showSetting && <ThemeSettings />}
               <Routes>
                 {/* Dashboard */}
                 <Route path="/" element={<Dashboard />} />

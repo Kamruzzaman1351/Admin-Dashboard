@@ -12,6 +12,9 @@ export const DashboardProvider = ({ children }) => {
     const [isActiveMenu, setIsActiveMenu] = useState(true)
     const [isClicked, setIsClicked] = useState(intialState);
     const [screenSize, setScreenSize] = useState(undefined);
+    const [showSetting, setShowSetting] = useState(false);
+    const [currentColor, setCurrentColor] = useState("#03C9D7");
+    const [currentMode, setCurrentMode] = useState("Light");
     const handleClick = (clicked) => {
         setIsClicked({...intialState, [clicked]: true})
     };
@@ -20,10 +23,31 @@ export const DashboardProvider = ({ children }) => {
             setIsActiveMenu(false)
         }
     }
+    const setMode = (e) => {
+        setCurrentMode(e.target.value);
+        localStorage.setItem("themeColor", e.target.value)
+        setShowSetting(false)
+    }
+    const setColor = (value) => {
+        setCurrentColor(value);
+        localStorage.setItem("currentColor", value)
+        setShowSetting(false)
+    }
+
+
+
     return <DashboardContext.Provider value={{
         isActiveMenu,
         isClicked,
-        screenSize, 
+        screenSize,
+        showSetting,
+        currentColor,
+        currentMode,
+        setMode, 
+        setColor,
+        setCurrentMode, 
+        setCurrentColor, 
+        setShowSetting, 
         setScreenSize,
         setIsActiveMenu,
         handleClick,

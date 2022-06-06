@@ -18,6 +18,9 @@ export const DashboardProvider = ({ children }) => {
     const handleClick = (clicked) => {
         setIsClicked({...intialState, [clicked]: true})
     };
+    const handleClickClose = (clicked) => {
+        setIsClicked({...intialState, [clicked]: false})
+    };
     const handleCloseSidebar = () => {
         if(isActiveMenu && screenSize <= 900) {
             setIsActiveMenu(false)
@@ -52,6 +55,7 @@ export const DashboardProvider = ({ children }) => {
         setIsActiveMenu,
         handleClick,
         handleCloseSidebar,
+        handleClickClose,
     }}>
         { children }
     </DashboardContext.Provider>

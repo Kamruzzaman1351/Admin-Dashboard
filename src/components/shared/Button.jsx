@@ -28,7 +28,6 @@ Button.defaultProps = {
 Button.propTypes = {
   color: PropTypes.string.isRequired,
   bgColor: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
   borderRadius: PropTypes.string.isRequired,
   size: PropTypes.string.isRequired,
 }
